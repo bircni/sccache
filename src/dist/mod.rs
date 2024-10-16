@@ -26,6 +26,10 @@ use std::str::FromStr;
 #[cfg(feature = "dist-server")]
 use std::sync::Mutex;
 
+#[allow(unused_imports)]
+#[cfg(feature = "dist-server")]
+use crate::errors::Error;
+
 use crate::errors::{bail, Result};
 
 #[cfg(any(feature = "dist-client", feature = "dist-server"))]
