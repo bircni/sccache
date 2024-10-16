@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use crate::compiler::args::*;
+use crate::compiler::args::{ArgDisposition, ArgInfo, ArgToStringResult, ArgsIter, Argument, FromArg, IntoArg, NormalizedDisposition, PathTransformerFn, SearchableArgInfo};
 use crate::compiler::c::{ArtifactDescriptor, CCompilerImpl, CCompilerKind, ParsedArguments};
 use crate::compiler::{clang, Cacheable, ColorMode, CompileCommand, CompilerArguments, Language};
 use crate::mock_command::{CommandCreatorSync, RunCommand};
@@ -29,7 +29,7 @@ use std::io::Read;
 use std::path::{Path, PathBuf};
 use std::process;
 
-use crate::errors::*;
+use crate::errors::{Result, anyhow};
 
 /// A struct on which to implement `CCompilerImpl`.
 #[derive(Clone, Debug)]

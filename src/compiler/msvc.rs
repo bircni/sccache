@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use crate::compiler::args::*;
+use crate::compiler::args::{ArgDisposition, ArgInfo, ArgToStringResult, ArgsIter, Argument, FromArg, IntoArg, NormalizedDisposition, PathTransformerFn};
 use crate::compiler::c::{ArtifactDescriptor, CCompilerImpl, CCompilerKind, ParsedArguments};
 use crate::compiler::{
     clang, gcc, write_temp_file, Cacheable, ColorMode, CompileCommand, CompilerArguments, Language,
@@ -30,7 +30,7 @@ use std::io::{self, BufWriter, Read, Write};
 use std::path::{Path, PathBuf};
 use std::process::{self, Stdio};
 
-use crate::errors::*;
+use crate::errors::{Context, Result, bail};
 
 /// A struct on which to implement `CCompilerImpl`.
 ///

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use crate::errors::*;
+use crate::errors::{Context, Result};
 use crate::protocol::{Request, Response};
 use crate::util;
 use byteorder::{BigEndian, ByteOrder};

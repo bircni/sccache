@@ -19,7 +19,7 @@ use opendal::layers::LoggingLayer;
 use opendal::services::Memcached;
 use opendal::Operator;
 
-use crate::errors::*;
+use crate::errors::Result;
 
 #[derive(Clone)]
 pub struct MemcachedCache;

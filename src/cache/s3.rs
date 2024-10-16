@@ -16,7 +16,7 @@ use opendal::services::S3;
 use opendal::Operator;
 use reqwest::ClientBuilder;
 
-use crate::errors::*;
+use crate::errors::{anyhow, Result};
 
 pub struct S3Cache;
 

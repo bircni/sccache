@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use crate::errors::*;
+use crate::errors::{bail, Context, Result};
 use clap::{error::ErrorKind, Arg, ArgAction, ArgGroup, ValueEnum};
 use std::env;
 use std::ffi::OsString;

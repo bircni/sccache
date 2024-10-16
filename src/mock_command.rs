@@ -45,7 +45,7 @@
 //! then create an `Arc<Mutex<MockCommandCreator>>` and safely provide
 //! `MockChild` outputs.
 
-use crate::errors::*;
+use crate::errors::{Context, Result};
 use crate::jobserver::{Acquired, Client};
 use async_trait::async_trait;
 use std::boxed::Box;
@@ -637,7 +637,7 @@ mod test {
     fn test_mock_spawn_error() {
         let client = Client::new_num(1);
         let mut creator = MockCommandCreator::new(&client);
-        creator.next_command_spawns(Err(anyhow!("error")));
+        creator.next_command_spawns(Err(anyhow::anyhow!("error")));
         let e = spawn_command(&mut creator, "foo").err().unwrap();
         assert_eq!("error", e.to_string());
     }

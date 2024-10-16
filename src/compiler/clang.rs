@@ -14,7 +14,7 @@
 
 #![allow(unused_imports, dead_code, unused_variables)]
 
-use crate::compiler::args::*;
+use crate::compiler::args::{ArgDisposition, ArgInfo, FromArg};
 use crate::compiler::c::{ArtifactDescriptor, CCompilerImpl, CCompilerKind, ParsedArguments};
 use crate::compiler::gcc::ArgData::*;
 use crate::compiler::{
@@ -33,7 +33,7 @@ use std::io::{self, Write};
 use std::path::{Path, PathBuf};
 use std::process;
 
-use crate::errors::*;
+use crate::errors::Result;
 
 /// A struct on which to implement `CCompilerImpl`.
 #[derive(Clone, Debug)]

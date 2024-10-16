@@ -6,7 +6,7 @@ use futures::channel::mpsc;
 use futures::channel::oneshot;
 use futures::StreamExt;
 
-use crate::errors::*;
+use crate::errors::{Context, Result};
 
 #[derive(Clone)]
 pub struct Client {

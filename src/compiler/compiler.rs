@@ -14,7 +14,10 @@
 // limitations under the License.
 
 use crate::cache::{Cache, CacheWrite, DecompressionFailure, FileObjectSource, Storage};
-use crate::compiler::args::*;
+use crate::compiler::args::{
+    ArgDisposition, ArgInfo, ArgToStringResult, ArgsIter, Argument, FromArg, IntoArg,
+    NormalizedDisposition, PathTransformerFn,
+};
 use crate::compiler::c::{CCompiler, CCompilerKind};
 use crate::compiler::clang::Clang;
 use crate::compiler::diab::Diab;
@@ -51,7 +54,7 @@ use std::sync::Arc;
 use std::time::{Duration, Instant};
 use tempfile::TempDir;
 
-use crate::errors::*;
+use crate::errors::{anyhow, bail, Context, Error, HttpClientError, ProcessError, Result};
 
 /// Can dylibs (shared libraries or proc macros) be distributed on this platform?
 #[cfg(all(
@@ -1464,7 +1467,6 @@ mod test {
     use std::io::{Cursor, Write};
     use std::sync::Arc;
     use std::time::Duration;
-    use std::u64;
     use test_case::test_case;
     use tokio::runtime::Runtime;
 

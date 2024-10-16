@@ -26,7 +26,7 @@ use std::str::FromStr;
 #[cfg(feature = "dist-server")]
 use std::sync::Mutex;
 
-use crate::errors::*;
+use crate::errors::{Result, bail};
 
 #[cfg(any(feature = "dist-client", feature = "dist-server"))]
 mod cache;

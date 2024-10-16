@@ -29,7 +29,7 @@ mod common {
 
     use crate::dist;
 
-    use crate::errors::*;
+    use crate::errors::{Context, HttpClientError, Result};
 
     // Note that content-length is necessary due to https://github.com/tiny-http/tiny-http/issues/147
     pub trait ReqwestRequestBuilderExt: Sized {
@@ -1076,7 +1076,7 @@ mod client {
         ServerCertificateHttpResponse,
     };
     use super::urls;
-    use crate::errors::*;
+    use crate::errors::{Context, Result, anyhow};
 
     const REQUEST_TIMEOUT_SECS: u64 = 600;
     const CONNECT_TIMEOUT_SECS: u64 = 5;

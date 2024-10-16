@@ -42,7 +42,7 @@ use std::path::{Path, PathBuf};
 use std::process;
 use std::sync::Arc;
 
-use crate::errors::*;
+use crate::errors::{Context, ProcessError, Result, bail};
 
 use super::preprocessor_cache::PreprocessorCacheEntry;
 use super::CacheControl;

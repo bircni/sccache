@@ -13,7 +13,10 @@
 // limitations under the License.
 
 use crate::cache::{FileObjectSource, Storage};
-use crate::compiler::args::*;
+use crate::compiler::args::{
+    split_os_string_arg, ArgDisposition, ArgInfo, ArgParseError, ArgParseResult, ArgToStringResult,
+    ArgsIter, Argument, FromArg, IntoArg, NormalizedDisposition, PathTransformerFn,
+};
 use crate::compiler::{
     c::ArtifactDescriptor, Cacheable, ColorMode, Compilation, CompileCommand, Compiler,
     CompilerArguments, CompilerHasher, CompilerKind, CompilerProxy, HashResult, Language,
@@ -33,7 +36,6 @@ use filetime::FileTime;
 use fs_err as fs;
 use log::Level::Trace;
 use once_cell::sync::Lazy;
-#[cfg(feature = "dist-client")]
 #[cfg(feature = "dist-client")]
 use std::borrow::Borrow;
 use std::borrow::Cow;
@@ -59,7 +61,7 @@ use std::sync::Arc;
 use std::sync::Mutex;
 use std::time;
 
-use crate::errors::*;
+use crate::errors::{anyhow, bail, Context, Result};
 
 #[cfg(feature = "dist-client")]
 const RLIB_PREFIX: &str = "lib";

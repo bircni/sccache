@@ -14,7 +14,7 @@ use opendal::layers::LoggingLayer;
 use opendal::services::Oss;
 use opendal::Operator;
 
-use crate::errors::*;
+use crate::errors::Result;
 
 pub struct OSSCache;
 

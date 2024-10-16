@@ -18,7 +18,7 @@ use std::io;
 use std::path::{Component, Path, PathBuf};
 use std::str;
 
-use crate::errors::*;
+use crate::errors::{Result, bail};
 
 #[cfg(all(target_os = "linux", target_arch = "x86_64"))]
 pub use self::toolchain_imp::*;
@@ -41,7 +41,7 @@ mod toolchain_imp {
     use super::ToolchainPackager;
     use fs_err as fs;
 
-    use crate::errors::*;
+    use crate::errors::{Result, bail};
 
     // Distributed client, but an unsupported platform for toolchain packaging so
     // create a failing implementation that will conflict with any others.

@@ -14,7 +14,7 @@
 // limitations under the License.
 
 use crate::cache::CacheMode;
-use crate::errors::*;
+use crate::errors::{anyhow, Result};
 use opendal::Operator;
 use opendal::{layers::LoggingLayer, services::Gcs};
 use reqsign::{GoogleToken, GoogleTokenLoad};

@@ -16,7 +16,7 @@ use opendal::layers::LoggingLayer;
 use opendal::services::Ghac;
 use opendal::Operator;
 
-use crate::errors::*;
+use crate::errors::Result;
 use crate::VERSION;
 
 /// A cache that stores entries in GHA Cache Services.

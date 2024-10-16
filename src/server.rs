@@ -55,7 +55,6 @@ use std::task::{Context, Poll, Waker};
 use std::time::Duration;
 #[cfg(feature = "dist-client")]
 use std::time::Instant;
-use std::u64;
 use tokio::sync::Mutex;
 use tokio::sync::RwLock;
 use tokio::{
@@ -68,7 +67,7 @@ use tokio_serde::Framed;
 use tokio_util::codec::{length_delimited, LengthDelimitedCodec};
 use tower::Service;
 
-use crate::errors::*;
+use crate::errors::{Error, HttpClientError, ProcessError, Result, anyhow};
 
 /// If the server is idle for this many seconds, shut down.
 const DEFAULT_IDLE_TIMEOUT: u64 = 600;

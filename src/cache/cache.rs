@@ -54,7 +54,7 @@ use tempfile::NamedTempFile;
 use zip::write::FileOptions;
 use zip::{CompressionMethod, ZipArchive, ZipWriter};
 
-use crate::errors::*;
+use crate::errors::{anyhow, bail, Context, Result};
 
 #[cfg(unix)]
 fn get_file_mode(file: &fs::File) -> Result<Option<u32>> {

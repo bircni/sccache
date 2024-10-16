@@ -17,7 +17,7 @@ use async_trait::async_trait;
 
 use crate::cache::{Cache, CacheMode, CacheWrite, Storage};
 use crate::compiler::PreprocessorCacheEntry;
-use crate::errors::*;
+use crate::errors::{anyhow, Result};
 
 use super::PreprocessorCacheModeConfig;
 

@@ -29,7 +29,7 @@ use std::str;
 use std::time::Duration;
 use std::time::{self, SystemTime};
 
-use crate::errors::*;
+use crate::errors::{Context, ProcessError, Result};
 
 /// The url safe engine for base64.
 pub const BASE64_URL_SAFE_ENGINE: base64::engine::GeneralPurpose =

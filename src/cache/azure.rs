@@ -18,7 +18,7 @@ use opendal::Operator;
 use opendal::layers::LoggingLayer;
 use opendal::services::Azblob;
 
-use crate::errors::*;
+use crate::errors::Result;
 
 pub struct AzureBlobCache;
 

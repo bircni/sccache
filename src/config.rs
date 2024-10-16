@@ -34,7 +34,7 @@ use std::str::FromStr;
 use std::sync::Mutex;
 
 pub use crate::cache::PreprocessorCacheModeConfig;
-use crate::errors::*;
+use crate::errors::{Context, Result, anyhow, bail};
 
 static CACHED_CONFIG_PATH: Lazy<PathBuf> = Lazy::new(CachedConfig::file_config_path);
 static CACHED_CONFIG: Mutex<Option<CachedFileConfig>> = Mutex::new(None);

@@ -18,6 +18,13 @@ name = "sccache"
 name = "sccache-dist"
 required-features = ["dist-server"]
 
+[lints.clippy]
+all = "deny"
+perf = "deny"
+style = "deny"
+suspicious = "deny"
+wildcard_imports = "deny"
+
 [profile.release]
 codegen-units = 1
 lto = true
