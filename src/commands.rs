@@ -41,7 +41,7 @@ use tokio::runtime::Runtime;
 use walkdir::WalkDir;
 use which::which_in;
 
-use crate::errors::{Context, Result, anyhow, bail};
+use crate::errors::{anyhow, bail, Context, Result};
 
 /// The default sccache server port.
 pub const DEFAULT_PORT: u16 = 4226;

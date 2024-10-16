@@ -23,7 +23,7 @@ use crate::{
         Cacheable, ColorMode, CompileCommand, CompilerArguments, Language,
     },
     counted_array, dist,
-    errors::{Result, anyhow},
+    errors::{anyhow, Result},
     mock_command::{CommandCreatorSync, RunCommand},
     util::run_input_output,
 };

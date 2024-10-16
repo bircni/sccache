@@ -1076,7 +1076,7 @@ mod client {
         ServerCertificateHttpResponse,
     };
     use super::urls;
-    use crate::errors::{Context, Result, anyhow};
+    use crate::errors::{anyhow, Context, Result};
 
     const REQUEST_TIMEOUT_SECS: u64 = 600;
     const CONNECT_TIMEOUT_SECS: u64 = 5;

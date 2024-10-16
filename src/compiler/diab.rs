@@ -19,7 +19,7 @@ use crate::compiler::args::{
 };
 use crate::compiler::c::{ArtifactDescriptor, CCompilerImpl, CCompilerKind, ParsedArguments};
 use crate::compiler::{Cacheable, ColorMode, CompileCommand, CompilerArguments, Language};
-use crate::errors::{Result, anyhow};
+use crate::errors::{anyhow, Result};
 use crate::mock_command::{CommandCreatorSync, RunCommand};
 use crate::util::{run_input_output, OsStrExt};
 use crate::{counted_array, dist};

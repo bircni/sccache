@@ -34,7 +34,7 @@ use std::io::{self, Write};
 use std::path::{Path, PathBuf};
 use std::process;
 
-use crate::errors::{Result, anyhow};
+use crate::errors::{anyhow, Result};
 
 /// A unit struct on which to implement `CCompilerImpl`.
 #[derive(Clone, Debug)]

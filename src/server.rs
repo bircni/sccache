@@ -67,7 +67,7 @@ use tokio_serde::Framed;
 use tokio_util::codec::{length_delimited, LengthDelimitedCodec};
 use tower::Service;
 
-use crate::errors::{Error, HttpClientError, ProcessError, Result, anyhow};
+use crate::errors::{anyhow, Error, HttpClientError, ProcessError, Result};
 
 /// If the server is idle for this many seconds, shut down.
 const DEFAULT_IDLE_TIMEOUT: u64 = 600;
